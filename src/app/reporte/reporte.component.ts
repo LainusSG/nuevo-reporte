@@ -7,7 +7,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import { degrees, grayscale, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
 
-
+const date = new Date();const año = date.getFullYear();const mes = date.toLocaleString('default', { month: 'short' });const mes2 = date.toLocaleString('default', { month: 'long' });const dia = date.getDate(); const hora = date.getHours();const minutos = date.getMinutes();
 
 export interface PeriodicElement {
   name: string;
@@ -18,6 +18,62 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
   {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
@@ -34,10 +90,10 @@ function buildTableBody(data: { [x: string]: { toString: () => any; }; }[], colu
       var dataRow: any[] = [];
 
       columns.forEach(function(column: string | number) {
-          dataRow.push(row[column].toString());
+          dataRow.push({text : row[column].toString(), alignment : 'center', color : 'black',});
       })
 
-      body.push(dataRow);
+      body.push(dataRow, );
   });
 
   return body;
@@ -45,10 +101,13 @@ function buildTableBody(data: { [x: string]: { toString: () => any; }; }[], colu
 
 function table(data: { [x: string]: { toString: () => any; }; }[] | { name: string; age: number; }[], columns: (string | number)[]) {
   return {
+    style: 'tableExample',
       table: {
+        widths: ['25%','25%','25%','25%'],
           headerRows: 1,
-          body: buildTableBody(data, columns)
+          body: buildTableBody(data, columns),
       }
+    
   };
 }
 
@@ -58,7 +117,7 @@ function table(data: { [x: string]: { toString: () => any; }; }[] | { name: stri
   styleUrl: './reporte.component.css'
 })
 export class ReporteComponent {
-
+  nombrejefa= "María Dolores Rodríguez Ramírez";
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
@@ -67,33 +126,57 @@ export class ReporteComponent {
   createPDF(){
  
     const pdfDefinition: any = {
-   
-      content: [
-        { text: 'Dynamic parts', style: 'header'  },
-  
-         table(ELEMENT_DATA, ['position', 'name', 'weight', 'symbol'], ),
+      pageSize: 'LEGAL',
+      pageMargins: [20, 200, 20, 40],
 
+      header:[
+        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
+        {text: 'SUBDIRECCIÓN DE ENFERMERÍA: '+this.nombrejefa, style: 'header'},
+        {text: 'DEPARTAMENTO DE ENFERMERÍA', style: 'header'},
+        {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},
+        {text: 'Fecha de Impresión: '+dia +' de '+ mes2 +' del '+ año +', '+ hora + ':' + minutos + 'hrs', style: 'header3'},
+        {text: 'RECEPCIÓN MATERIAL DE QUIRÓFANO ', style: 'header2'},
+      ],
+
+      content: [
+        
+         table(ELEMENT_DATA, ['position', 'name', 'weight', 'symbol'], ),
     ],
     styles: {
-      header: {
-        fontSize: 18,
+      header2: {
+        fontSize: 12,
         bold: true,
-        margin: 2,
-        color: 'black'
+        margin: [0, 20, 0, 0],
+        alignment: "center",
+        color: 'black',
+        position:'fixed',
+       
       },
-      subheader: {
-        fontSize: 16,
+      header: {
+        fontSize: 12,
         bold: true,
-        margin: [0, 10, 0, 5]
+        margin: [0, 7, 0, 0],
+        alignment: "center",
+        color: 'black',
+        position:'fixed',
+      },
+
+      header3: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 27, 20, 0],
+        alignment: "right",
+        color: 'black',
+        position:'fixed',
       },
       tableExample: {
-        margin: [0, 5, 0, 15]
-      },
-      tableHeader: {
-        bold: true,
-        fontSize: 13,
+        fontSize: 15,
+        bold: false,
+        margin: [0, 0, 0, 0],
+        alignment : 'center',
         color: 'black'
-      }
+      },
+    
     },
     }
       
