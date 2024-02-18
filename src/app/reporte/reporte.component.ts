@@ -4,80 +4,114 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-import { degrees, grayscale, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
 
 const date = new Date();const año = date.getFullYear();const mes = date.toLocaleString('default', { month: 'short' });const mes2 = date.toLocaleString('default', { month: 'long' });const dia = date.getDate(); const hora = date.getHours();const minutos = date.getMinutes();
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
 const ELEMENT_DATA = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {ticket: 1, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 2, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 3, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 4, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 5, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 6, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 7, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 8, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 9, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 10, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 11, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 12, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 13, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 14, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 15, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 16, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 17, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 18, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 19, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 20, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 21, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 22, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 23, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 24, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 25, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 26, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 27, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 28, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 29, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 30, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 31, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 32, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 33, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 34, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 35, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 36, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 37, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 38, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 39, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 40, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 41, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 42, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 43, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 44, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 45, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 46, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 47, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 48, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 49, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 50, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 1, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 2, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 3, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 4, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 5, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 6, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 7, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 8, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 9, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 10, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 11, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 12, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 13, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 14, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 15, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 16, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 17, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 18, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 19, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 20, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 21, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 22, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 23, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 24, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 25, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 26, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 27, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 28, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 29, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 30, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 31, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 32, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 33, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 34, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 35, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 36, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 37, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 38, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 39, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 40, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 41, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 42, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 43, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 44, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 45, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 46, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 47, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 48, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 49, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+  {ticket: 50, fecha: '27/05/2023', cirugia:'Estenosis Aórtica', sala:1, turno: 2, estatus:'pendiente'},
+
+ 
 ];
 
 
@@ -103,7 +137,7 @@ function table(data: { [x: string]: { toString: () => any; }; }[] | { name: stri
   return {
     style: 'tableExample',
       table: {
-        widths: ['25%','25%','25%','25%'],
+        widths: ['10%','20%','30%','10%','10%','20%'],
           headerRows: 1,
           body: buildTableBody(data, columns),
       }
@@ -118,7 +152,7 @@ function table(data: { [x: string]: { toString: () => any; }; }[] | { name: stri
 })
 export class ReporteComponent {
   nombrejefa= "María Dolores Rodríguez Ramírez";
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['ticket', 'fecha', 'cirugia', 'sala', 'turno', 'estatus'];
   dataSource = ELEMENT_DATA;
 
 
@@ -126,7 +160,9 @@ export class ReporteComponent {
   createPDF(){
  
     const pdfDefinition: any = {
-      pageSize: 'LEGAL',
+
+      
+      pageSize: 'A4',
       pageMargins: [20, 200, 20, 40],
 
       header:[
@@ -140,8 +176,9 @@ export class ReporteComponent {
 
       content: [
         
-         table(ELEMENT_DATA, ['position', 'name', 'weight', 'symbol'], ),
+         table(ELEMENT_DATA, ['ticket', 'fecha', 'cirugia', 'sala', 'turno', 'estatus'], ),
     ],
+  
     styles: {
       header2: {
         fontSize: 12,
@@ -169,6 +206,13 @@ export class ReporteComponent {
         color: 'black',
         position:'fixed',
       },
+      footer: {
+        fontSize: 12,
+        margin: [0, 7, 0, 0],
+        alignment: "center",
+        color: 'black',
+        position:'fixed',
+      },
       tableExample: {
         fontSize: 15,
         bold: false,
@@ -178,6 +222,11 @@ export class ReporteComponent {
       },
     
     },
+    
+    footer:[
+      
+      {text: 'TRACY © '+año, style: 'footer'},
+    ]
     }
       
     
@@ -198,71 +247,6 @@ export class ReporteComponent {
     link.download = fileName;
     link.click();
   };
-
-
-
-
-
-
-
-
-  async createPdf() {
-    //--------------------------------- comenzar a borrar ------------------------------------------
-    
-    
-    const flagUrl = '../assets/PLANTILLA GENERAL.pdf';
-    const constitutionUrl = 'https://pdf-lib.js.org/assets/us_constitution.pdf';
-  
-    const flagPdfBytes = await fetch(flagUrl).then((res) => res.arrayBuffer());
-    const constitutionPdfBytes = await fetch(constitutionUrl).then((res) =>
-      res.arrayBuffer(),
-    );
-  
-    const pdfDoc = await PDFDocument.create();
-  
-    const [americanFlag] = await pdfDoc.embedPdf(flagPdfBytes);
-  
-    const usConstitutionPdf = await PDFDocument.load(constitutionPdfBytes);
-    const preamble = await pdfDoc.embedPage(usConstitutionPdf.getPages()[1], {
-      left: 55,
-      bottom: 485,
-      right: 300,
-      top: 575,
-    });
-  
-    const americanFlagDims = americanFlag.scale(1);
-    const preambleDims = preamble.scale(2.25);
-  
-    const page = pdfDoc.addPage();
-  
-    page.drawPage(americanFlag, {
-      ...americanFlagDims,
-
-    });
-    page.drawPage(preamble, {
-      ...preambleDims,
-      x: page.getWidth() / 2 - preambleDims.width / 2,
-      y: page.getHeight() / 2 - preambleDims.height / 2 - 50,
-    });
-  
-    
-    
-      const pdfBytes = await pdfDoc.save()
-        //--------------------------- Dejar de Borrar------------------------------------------
-        this.saveByteArray('Reporte de Recepción - ', pdfBytes); //-------- esta linea de codigo convierte la funcion de arriba en el formato reconocido por angulars
-        
-      }
-    
-    
-      saveByteArray(reportName: string, byte: BlobPart) {
-        var blob = new Blob([byte], {type: "application/pdf"});
-        var link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        var fileName = reportName;
-        link.download = fileName;
-        link.click();
-      };
-
 
 
 
