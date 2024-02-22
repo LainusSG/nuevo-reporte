@@ -175,7 +175,8 @@ export class ReporteLavadoManualComponent {
             ]
           },layout: 'noBorders'
         },
-
+ 
+        
       ],
 
       content: [
