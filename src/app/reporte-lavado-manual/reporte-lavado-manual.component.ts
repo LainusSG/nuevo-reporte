@@ -171,7 +171,7 @@ export class ReporteLavadoManualComponent {
           table: {
             widths: ['15%','12%','12%','12%','12%','12%','12%','12%',],
             body: [
-              ['Instrumental\nNombre', 'Dilición:\nSi/No', 'Pre-remojo:\nSi/No', 'Cepillado:\nSi/No', 'Enjuage:\nSi/No', 'Secado:\nSi/No','Sopleteado:\nSi/No','Inspeccion:\nSi/No'],
+              ['Instrumental\nNombre', 'Dilución:\nSi/No', 'Pre-remojo:\nSi/No', 'Cepillado:\nSi/No', 'Enjuage:\nSi/No', 'Secado:\nSi/No','Sopleteado:\nSi/No','Inspeccion:\nSi/No'],
             ]
           },layout: 'noBorders'
         },
