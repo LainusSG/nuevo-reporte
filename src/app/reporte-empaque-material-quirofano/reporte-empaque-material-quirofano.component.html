@@ -1,0 +1,40 @@
+
+<div align="center">
+  <h1>reporte-empaque-material-quirofano</h1>
+  </div>
+  
+  <button type="button" (click)="createPDF()" class="botones">Generar Reporte</button>
+  
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="Prioridad">
+        <th mat-header-cell *matHeaderCellDef> Prioridad </th>
+        <td mat-cell *matCellDef="let element"> {{element.Prioridad}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="Nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Elaborar">
+        <th mat-header-cell *matHeaderCellDef> Por Elaborar</th>
+        <td mat-cell *matCellDef="let element"> {{element.Elaborar}} </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="Estatus">
+        <th mat-header-cell *matHeaderCellDef>Estatus</th>
+        <td mat-cell *matCellDef="let element"> {{element.Estatus}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
