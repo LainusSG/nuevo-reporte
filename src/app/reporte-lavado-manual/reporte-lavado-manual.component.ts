@@ -9,19 +9,12 @@ const date = new Date();const año = date.getFullYear();const mes = date.toLocal
 
 
 const ELEMENT_DATA = [
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
-  {Ticket: 1, Fecha: '27/05/2023', Cirugia:'Estenosis Aórtica', Sala:1, Turno: 2, Estatus:'pendiente'},
+  {Nombre:'Pinza Disección'},
+  {Nombre:'Pinza Kocher'},
+  {Nombre:'Pinza Disección'},
+  {Nombre:'Pinza Kocher'},
+  {Nombre:'Pinza Disección'},
+  {Nombre:'Pinza Kocher'},
 
 ];
 
@@ -34,7 +27,7 @@ function buildTableBody(data: { [x: string]: { toString: () => any; }; }[], colu
       var dataRow: any[] = [];
 
       columns.forEach(function(column: string | number) {
-          dataRow.push({text : row[column].toString(), alignment : 'center', color : 'black', bold:false, fontSize: 9,});
+        dataRow.push({text : row[column].toString(), alignment : 'left', color : 'black', bold:false, fontSize: 9, margin: [-2, 10, 0, 0]});
       })
 
       body.push(dataRow, );
@@ -47,9 +40,9 @@ function table(data: { [x: string]: { toString: () => any; }; }[] | { name: stri
   return {
     style: 'tableExample',
       table: {
-
+widths:['100%'],
           body: buildTableBody(data, columns),
-      }
+      },layout: 'noBorders'
     
   };
 }
@@ -189,7 +182,7 @@ export class ReporteLavadoManualComponent {
         //----Datos de la bitacora}
    
         
-
+        table(ELEMENT_DATA, ['Nombre'], ),
         
 
 
@@ -399,8 +392,8 @@ export class ReporteLavadoManualComponent {
       tableExample: {
         fontSize: 11,
         bold: true,
-        margin: [60, 10, 0, 0],
-        alignment : 'center',
+        margin: [0, 0, 0, 0],
+        alignment : 'left',
         color: 'black'
       },
     
