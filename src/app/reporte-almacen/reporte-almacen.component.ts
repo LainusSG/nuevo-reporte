@@ -171,7 +171,7 @@ export class ReporteAlmacenComponent {
         {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},
         {text: 'Fecha de Impresión: '+fecha, style: 'header3'},
         {text: 'ALMACÉN GENERAL', style: 'header2'},
-      	{
+      	{ 
           columns: [
             {
               text: 'Área: '+ area, 
