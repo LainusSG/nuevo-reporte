@@ -149,14 +149,14 @@ export class ReporteRecepcionMaterialQuirofanoComponent {
         {
           "image":"logo",
             width: 550,
-            margin:[37,80,0,0],
+            margin:[30,80,0,0],
             opacity: 0.1
         }
       ],
 
       header:[
      
-        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
+        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS Y NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
         {text: 'SUBDIRECCIÓN DE ENFERMERÍA: '+this.nombrejefa, style: 'header'},
         {text: 'DEPARTAMENTO DE ENFERMERÍA', style: 'header'},
         {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},

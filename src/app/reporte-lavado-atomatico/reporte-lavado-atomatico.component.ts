@@ -103,26 +103,27 @@ export class ReporteLavadoAtomaticoComponent {
 
       
       pageSize: 'LETTER',
-      pageMargins: [20, 420, 20, 30],
+      pageMargins: [30, 420, 30, 60],
 
       background: [
         {
           "image":"logo",
-            width: 100,
-            margin:[20,22,0,0]
+            width: 90,
+            margin:[30,35,0,0]
         },
 
         {
           "image":"logo",
-            width: 600,
-            margin:[-2,60,0,0],
+            width: 550,
+            margin:[30,80,0,0],
             opacity: 0.1
         }
       ],
 
+
       header:[
      
-        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
+        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS Y NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
         {text: 'SUBDIRECCIÓN DE ENFERMERÍA: '+this.nombrejefa, style: 'header'},
         {text: 'DEPARTAMENTO DE ENFERMERÍA', style: 'header'},
         {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},
@@ -204,7 +205,7 @@ export class ReporteLavadoAtomaticoComponent {
       header2: {
         fontSize: 11,
         bold: true,
-        margin: [0, 30, 0, 0],
+        margin: [0, 40, 0, 0],
         alignment: "center",
         color: 'black',
         position:'fixed',
@@ -213,7 +214,7 @@ export class ReporteLavadoAtomaticoComponent {
       header3: {
         fontSize: 11,
         bold: true,
-        margin: [0, 27, 30, 0],
+        margin: [0, 27, 40, 0],
         alignment: "right",
         color: 'black',
         position:'fixed',

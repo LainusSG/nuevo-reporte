@@ -114,26 +114,26 @@ export class ReporteEsterilizacionComponent {
 
       
       pageSize: 'LETTER',
-      pageMargins: [20, 610, 20, 30],
+      pageMargins: [30, 640, 30, 60],
 
       background: [
         {
           "image":"logo",
-            width: 100,
-            margin:[20,22,0,0]
+            width: 90,
+            margin:[30,35,0,0]
         },
 
         {
           "image":"logo",
-            width: 600,
-            margin:[-2,60,0,0],
+            width: 550,
+            margin:[30,80,0,0],
             opacity: 0.1
         }
       ],
 
       header:[
      
-        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
+        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS Y NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
         {text: 'SUBDIRECCIÓN DE ENFERMERÍA: '+this.nombrejefa, style: 'header'},
         {text: 'DEPARTAMENTO DE ENFERMERÍA', style: 'header'},
         {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},
@@ -195,7 +195,7 @@ export class ReporteEsterilizacionComponent {
       {text: 'MATERIALES ESTERILIZADOS ', style: 'header2'},
 
       {
-        style: 'tableExample', margin:[20,20,20,0],
+        style: 'tableExample', margin:[30,20,30,0],
         table: {
           widths: ['20%','20%','20%','20%','20%'],
           body: [
@@ -232,7 +232,7 @@ export class ReporteEsterilizacionComponent {
       header2: {
         fontSize: 11,
         bold: true,
-        margin: [40, 30, 0, 0],
+        margin: [40, 40, 0, 0],
         alignment: "center",
         color: 'black',
         position:'fixed',
@@ -241,7 +241,7 @@ export class ReporteEsterilizacionComponent {
       header3: {
         fontSize: 11,
         bold: true,
-        margin: [0, 27, 30, 0],
+        margin: [0, 27, 40, 0],
         alignment: "right",
         color: 'black',
         position:'fixed',
@@ -249,7 +249,7 @@ export class ReporteEsterilizacionComponent {
       content0: {
         fontSize: 11,
         bold: true,
-        margin: [70, 15, 0,0],
+        margin: [80, 15, 0,0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -257,7 +257,7 @@ export class ReporteEsterilizacionComponent {
       content1: {
         fontSize: 11,
         bold: true,
-        margin: [40, 1, 0, 0],
+        margin: [50, 1, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -265,7 +265,7 @@ export class ReporteEsterilizacionComponent {
       content2: {
         fontSize: 11,
         bold: true,
-        margin: [130, -12, 0, 0],
+        margin: [140, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -273,7 +273,7 @@ export class ReporteEsterilizacionComponent {
       content3: {
         fontSize: 11,
         bold: true,
-        margin: [200, -12, 0, 0],
+        margin: [210, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -281,7 +281,7 @@ export class ReporteEsterilizacionComponent {
       content4: {
         fontSize: 11,
         bold: true,
-        margin: [320, -12, 0, 0],
+        margin: [330, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -289,7 +289,7 @@ export class ReporteEsterilizacionComponent {
       content5: {
         fontSize: 11,
         bold: true,
-        margin: [40, 10, 0, 10],
+        margin: [50, 10, 0, 10],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -297,7 +297,7 @@ export class ReporteEsterilizacionComponent {
       content1b: {
         fontSize: 11,
         bold: false,
-        margin: [40, 0, 20, 0],
+        margin: [50, 0, 20, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -305,7 +305,7 @@ export class ReporteEsterilizacionComponent {
       content2b: {
         fontSize: 11,
         bold: false,
-        margin: [130, -12, 0, 0],
+        margin: [140, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -313,7 +313,7 @@ export class ReporteEsterilizacionComponent {
       content3b: {
         fontSize: 11,
         bold: false,
-        margin: [200, -12, 0, 0],
+        margin: [210, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -321,7 +321,7 @@ export class ReporteEsterilizacionComponent {
       content4b: {
         fontSize: 11,
         bold: false,
-        margin: [320, -12, 0, 0],
+        margin: [330, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',

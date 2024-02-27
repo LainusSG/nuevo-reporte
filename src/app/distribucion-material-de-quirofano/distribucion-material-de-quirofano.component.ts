@@ -209,26 +209,26 @@ export class DISTRIBUCIONMATERIALDEQUIROFANOComponent {
     const pdfDefinition: any = {
 
       pageSize: 'LETTER',
-      pageMargins: [20, 270, 20, 80],
+      pageMargins: [30, 290, 30, 60],
 
       background: [
         {
           "image":"logo",
-            width: 100,
-            margin:[20,22,0,0]
+            width: 90,
+            margin:[30,35,0,0]
         },
 
         {
           "image":"logo",
-            width: 600,
-            margin:[-2,60,0,0],
+            width: 550,
+            margin:[30,80,0,0],
             opacity: 0.1
         }
       ],
 
       header:[
      
-        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
+        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS Y NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
         {text: 'SUBDIRECCIÓN DE ENFERMERÍA: '+this.nombrejefa, style: 'header'},
         {text: 'DEPARTAMENTO DE ENFERMERÍA', style: 'header'},
         {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},
@@ -253,7 +253,7 @@ export class DISTRIBUCIONMATERIALDEQUIROFANOComponent {
 
 
         {
-          style: 'tableExample', margin:[20,20,20,0],
+          style: 'tableExample', margin:[30,20,30,0],
           table: {
             widths: ['17%','17%','19%','17%','17%','13%','13%',],
             body: [
@@ -289,7 +289,7 @@ export class DISTRIBUCIONMATERIALDEQUIROFANOComponent {
       header2: {
         fontSize: 11,
         bold: true,
-        margin: [40, 30, 0, 0],
+        margin: [40, 40, 0, 0],
         alignment: "center",
         color: 'black',
         position:'fixed',
@@ -298,7 +298,7 @@ export class DISTRIBUCIONMATERIALDEQUIROFANOComponent {
       header3: {
         fontSize: 11,
         bold: true,
-        margin: [0, 27, 30, 0],
+        margin: [0, 27, 40, 0],
         alignment: "right",
         color: 'black',
         position:'fixed',

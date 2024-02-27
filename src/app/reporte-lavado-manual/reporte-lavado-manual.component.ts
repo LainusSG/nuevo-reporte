@@ -113,26 +113,27 @@ export class ReporteLavadoManualComponent {
 
       
       pageSize: 'LETTER',
-      pageMargins: [20, 430, 20, 30],
+      pageMargins: [30, 455, 30, 60],
 
       background: [
         {
           "image":"logo",
-            width: 100,
-            margin:[20,22,0,0]
+            width: 90,
+            margin:[30,35,0,0]
         },
 
         {
           "image":"logo",
-            width: 600,
-            margin:[-2,60,0,0],
+            width: 550,
+            margin:[30,80,0,0],
             opacity: 0.1
         }
       ],
 
+
       header:[
      
-        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
+        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS Y NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
         {text: 'SUBDIRECCIÓN DE ENFERMERÍA: '+this.nombrejefa, style: 'header'},
         {text: 'DEPARTAMENTO DE ENFERMERÍA', style: 'header'},
         {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},
@@ -167,7 +168,7 @@ export class ReporteLavadoManualComponent {
         
      
         {
-          style: 'tableExample', margin:[20,20,20,0],
+          style: 'tableExample', margin:[30,20,30,0],
           table: {
             widths: ['15%','12%','12%','12%','12%','12%','12%','12%',],
             body: [
@@ -211,7 +212,7 @@ export class ReporteLavadoManualComponent {
       header2: {
         fontSize: 11,
         bold: true,
-        margin: [40, 30, 0, 0],
+        margin: [40, 40, 0, 0],
         alignment: "center",
         color: 'black',
         position:'fixed',
@@ -220,7 +221,7 @@ export class ReporteLavadoManualComponent {
       header3: {
         fontSize: 11,
         bold: true,
-        margin: [0, 27, 30, 0],
+        margin: [0, 27, 40, 0],
         alignment: "right",
         color: 'black',
         position:'fixed',
@@ -228,7 +229,7 @@ export class ReporteLavadoManualComponent {
       content0: {
         fontSize: 11,
         bold: true,
-        margin: [50, 15, 0,0],
+        margin: [70, 15, 0,0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -236,7 +237,7 @@ export class ReporteLavadoManualComponent {
       content1: {
         fontSize: 11,
         bold: true,
-        margin: [20, 1, 0, 0],
+        margin: [40, 1, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -244,7 +245,7 @@ export class ReporteLavadoManualComponent {
       content2: {
         fontSize: 11,
         bold: true,
-        margin: [110, -12, 0, 0],
+        margin: [130, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -252,7 +253,7 @@ export class ReporteLavadoManualComponent {
       content3: {
         fontSize: 11,
         bold: true,
-        margin: [180, -12, 0, 0],
+        margin: [200, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -260,7 +261,7 @@ export class ReporteLavadoManualComponent {
       content4: {
         fontSize: 11,
         bold: true,
-        margin: [300, -12, 0, 0],
+        margin: [320, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -268,7 +269,7 @@ export class ReporteLavadoManualComponent {
       content_1: {
         fontSize: 11,
         bold: false,
-        margin: [20, 1, 0, 0],
+        margin: [40, 1, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -276,7 +277,7 @@ export class ReporteLavadoManualComponent {
       content_2: {
         fontSize: 11,
         bold: false,
-        margin: [120, -12, 0, 0],
+        margin: [140, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -284,7 +285,7 @@ export class ReporteLavadoManualComponent {
       content_3: {
         fontSize: 10,
         bold: false,
-        margin: [170, -12, 0, 0],
+        margin: [190, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -292,7 +293,7 @@ export class ReporteLavadoManualComponent {
       content_4: {
         fontSize: 10,
         bold: false,
-        margin: [240, -12, 0, 0],
+        margin: [260, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -300,7 +301,7 @@ export class ReporteLavadoManualComponent {
       content_5: {
         fontSize: 10,
         bold: false,
-        margin: [300, -12, 0, 0],
+        margin: [320, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -308,7 +309,7 @@ export class ReporteLavadoManualComponent {
       content_6: {
         fontSize: 10,
         bold: false,
-        margin: [360, -12, 0, 0],
+        margin: [380, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -316,7 +317,7 @@ export class ReporteLavadoManualComponent {
       content_7: {
         fontSize: 10,
         bold: false,
-        margin: [410, -12, 0, 0],
+        margin: [430, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -324,7 +325,7 @@ export class ReporteLavadoManualComponent {
       content_8: {
         fontSize: 10,
         bold: false,
-        margin: [480, -12, 0, 0],
+        margin: [490, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -340,7 +341,7 @@ export class ReporteLavadoManualComponent {
       content1b: {
         fontSize: 11,
         bold: false,
-        margin: [20, 0, 20, 0],
+        margin: [40, 0, 20, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -348,7 +349,7 @@ export class ReporteLavadoManualComponent {
       content2b: {
         fontSize: 11,
         bold: false,
-        margin: [110, -12, 0, 0],
+        margin: [130, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -356,7 +357,7 @@ export class ReporteLavadoManualComponent {
       content3b: {
         fontSize: 11,
         bold: false,
-        margin: [180, -12, 0, 0],
+        margin: [200, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -364,7 +365,7 @@ export class ReporteLavadoManualComponent {
       content4b: {
         fontSize: 11,
         bold: false,
-        margin: [300, -12, 0, 0],
+        margin: [320, -12, 0, 0],
         alignment: "left",
         color: 'black',
         position:'fixed',
@@ -393,7 +394,7 @@ export class ReporteLavadoManualComponent {
       tableExample: {
         fontSize: 11,
         bold: true,
-        margin: [0, 0, 0, 0],
+        margin: [2, 0, 0, 0],
         alignment : 'left',
         color: 'black'
       },
