@@ -165,7 +165,7 @@ export class ReporteAlmacenComponent {
 
       header:[
      
-        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
+        {text: 'INSTITUTO NACIONAL DE CIENCIAS MÉDICAS Y NUTRICIÓN SALVADOR ZUBIRÁN', style: 'header2'},
         {text: 'SUBDIRECCIÓN DE ENFERMERÍA: '+this.nombrejefa, style: 'header'},
         {text: 'DEPARTAMENTO DE ENFERMERÍA', style: 'header'},
         {text: 'CENTRAL DE EQUIPOS Y ESTERILIZACIÓN', style: 'header'},
